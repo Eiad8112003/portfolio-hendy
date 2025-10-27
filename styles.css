@@ -1,0 +1,423 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap');
+
+/* CSS Variables */
+:root {
+    --primary-color: #00abf0;
+    --dark-color: #031540;
+    --light-color: #fff;
+    --text-light: #ffffffb3; /* 70% opacity white */
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--primary-color);
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+.header {
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar {
+    background: transparent;
+    transition: background-color 0.3s ease;
+}
+
+/* Sticky navbar styling */
+.navbar.scrolled {
+    background: rgba(3, 21, 64, 0.9); /* Dark color on scroll */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 25px;
+    color: #000; /* === Fixed: Changed to black as requested === */
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.navbar-nav .nav-link {
+    font-size: 18px;
+    color: aliceblue;
+    font-weight: 500;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--dark-color);
+}
+
+/* Custom Button Styles */
+.btn-custom {
+    padding: 10px 35px;
+    background: var(--dark-color);
+    border-color: var(--dark-color);
+    border-radius: 40px;
+    font-size: 17px;
+    color: var(--light-color);
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px var(--primary-color);
+    transition: 0.3s;
+}
+
+.btn-custom:hover {
+    background: var(--light-color);
+    color: var(--primary-color);
+    border-color: var(--light-color);
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+.btn-custom-outline {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-custom-outline:hover {
+    background-color: var(--light-color);
+    color: var(--primary-color);
+}
+
+/* Home Section (Your Original Style) */
+.home {
+    height: 100vh;
+    min-height: 700px;
+    background: linear-gradient(-90deg, var(--primary-color) 65%, var(--light-color) 35%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.home-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px; /* Slightly smaller for better balance */
+    height: 500px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    border: 25px solid var(--light-color);
+    overflow: hidden;
+    outline: 25px solid var(--primary-color);
+}
+
+.home-image img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.home-content {
+    max-width: 600px;
+    color: var(--light-color);
+    text-align: right;
+}
+
+.home-content h1 {
+    font-size: 55px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.home-content h3 {
+    font-size: 40px;
+    color: transparent;
+    -webkit-text-stroke: .5px var(--light-color);
+    background-image: linear-gradient(var(--dark-color), var(--dark-color));
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: -400px 0;
+    animation: animationtext 6s linear infinite;
+}
+
+@keyframes animationtext {
+    0%, 95%, 100% {
+        background-position: -400px 0;
+    }
+    65%, 85% {
+        background-position: 0 0;
+    }
+}
+
+.home-content p {
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.home-sci {
+    margin: 25px 0 40px;
+}
+
+.home-sci a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid var(--light-color);
+    border-radius: 50%;
+    font-size: 20px;
+    color: var(--dark-color);
+    text-decoration: none;
+    margin-left: 12px;
+    transition: 0.5s;
+}
+
+.home-sci a:hover {
+    background: var(--primary-color);
+    color: var(--light-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+/* General Section Styles */
+.about-section,
+.skills-section,
+.projects-section,
+.resume-section,
+.contact-section {
+    padding: 100px 0;
+    background-color: var(--primary-color);
+}
+
+.section-title {
+    color: var(--light-color);
+    font-size: 50px;
+    font-weight: 700;
+    margin-bottom: 50px;
+    border-bottom: 3px solid var(--dark-color);
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.text-white-75 {
+    color: var(--text-light) !important;
+}
+
+/* Skills Section */
+.skills-section {
+    background-color: var(--dark-color); /* Alternating color */
+}
+
+.icon-box {
+    color: var(--primary-color);
+    font-size: 100px;
+    transition: 0.3s;
+}
+.icon-box:hover {
+    transform: scale(1.1);
+    color: var(--light-color);
+}
+.icon-box p {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--light-color);
+    margin-top: 10px;
+}
+
+/* === Projects Section (NEW STYLES) === */
+.project-card {
+    background-color: var(--dark-color); /* Use the dark color for the card */
+    color: var(--light-color);
+    border: 1px solid var(--dark-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Ensure image corners are rounded */
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Add a subtle hover effect */
+    box-shadow: 0 10px 20px rgba(3, 21, 64, 0.3);
+}
+
+.project-card .card-img-top {
+    height: 200px; /* Fixed height for all images */
+    object-fit: cover; /* Ensures images cover the area, not stretch */
+}
+
+.project-card .card-title {
+    color: var(--primary-color); /* Use the bright blue for the title */
+    font-weight: 600;
+}
+
+.project-card .card-text {
+    color: var(--text-light); /* Use the 70% white for description */
+    font-size: 0.9rem;
+    flex-grow: 1; /* Makes card-body fill height */
+}
+
+.project-card .card-footer {
+    background-color: rgba(0, 0, 0, 0.2); /* Slightly different footer bg */
+    border-top: 1px solid var(--primary-color);
+    text-align: center;
+}
+
+.project-card .btn-light {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    font-weight: 500;
+    border: none;
+}
+
+.project-card .btn-light:hover {
+    background-color: #e2e6ea;
+}
+
+.project-card .btn-outline-light {
+    color: var(--light-color);
+    border-color: var(--light-color);
+}
+
+.project-card .btn-outline-light:hover {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
+
+/* Resume Section */
+.resume-section {
+    background-color: var(--dark-color); /* Alternating color */
+}
+
+.cv-box {
+    background-color: var(--primary-color);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: left; /* Better for readability */
+}
+
+.cv-box h3 {
+    color: var(--dark-color);
+    margin-top: 20px;
+    font-size: 28px;
+    font-weight: 600;
+}
+.cv-box h3:first-child {
+    margin-top: 0;
+}
+
+.cv-box p {
+    color: var(--light-color);
+}
+
+.cv-box .intro {
+    font-size: 16px;
+    color: var(--text-light);
+    margin-bottom: 20px;
+}
+
+.cv-box .summary {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--light-color);
+}
+
+.cv-box .skills-list {
+    list-style: square;
+    padding-left: 20px; /* Indent list */
+    margin: 20px 0;
+}
+
+.cv-box .skills-list li {
+    margin: 8px 0;
+    padding: 5px;
+    color: var(--light-color);
+    font-size: 16px;
+}
+
+/* Contact Section */
+.contact-section .form-control {
+    background-color: var(--light-color);
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+}
+.contact-section .form-control:focus {
+    background-color: var(--light-color);
+    box-shadow: 0 0 10px var(--dark-color);
+}
+.contact-section ::placeholder {
+    color: #888;
+}
+
+/* Responsive Design */
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    .home {
+        flex-direction: column-reverse; /* Stack image on top of content */
+        justify-content: center;
+        text-align: center;
+        padding: 150px 5%;
+        background: var(--primary-color); /* Solid background */
+    }
+
+    .home-content {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .home-image {
+        width: 300px;
+        height: 300px;
+        border-width: 15px;
+        outline-width: 15px;
+        margin-bottom: 30px;
+    }
+
+    .home-content h1 {
+        font-size: 45px;
+    }
+
+    .home-content h3 {
+        font-size: 30px;
+    }
+
+    .home-sci a {
+        margin: 0 8px;
+    }
+    
+    .navbar {
+        background: var(--dark-color); /* Solid bg for mobile nav */
+    }
+    .navbar-collapse {
+        background: var(--dark-color);
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 10px;
+    }
+}
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+    .home-image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .section-title {
+        font-size: 40px;
+    }
+}
+
+/* === DELETED the duplicate .logo rule from the end of the file === */
